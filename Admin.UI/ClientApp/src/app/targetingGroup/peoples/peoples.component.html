@@ -1,0 +1,53 @@
+<input type="button" value="Добавить" class="btn btn-default" (click)="addPeople()" />
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <td>Id</td>
+            <td>Имя</td>
+            <td>Возраст</td>
+            <td></td>
+            <td></td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let people of peoples">
+            <ng-template [ngTemplateOutlet]="loadTemplate(people)" 
+                        [ngTemplateOutletContext]="{ $implicit: people}">
+            </ng-template>
+        </tr>
+    </tbody>
+</table>
+<div>{{statusMessage}}</div>
+    
+    
+
+<ng-template #readOnlyTemplate let-people>
+    <td>{{people.peopleId}}</td>
+    <td>{{people.name}}</td>
+    <td>{{people.age}}</td>
+    <td>
+        <input type="button" value="Изменить" class="btn btn-default" (click)="editPeople(people)" />
+    </td>
+    <td>
+        <input type="button" value="Удалить" (click)="deletePeople(people)" class="btn btn-danger" />
+    </td>
+</ng-template>
+   
+
+<ng-template #editTemplate>
+    <td>
+        <input type="number" [(ngModel)]="editedPeople.id" readonly disabled class="form-control" />
+    </td>
+    <td>
+        <input type="text" [(ngModel)]="editedPeople.name" class="form-control" />
+    </td>
+    <td>
+        <input type="number" [(ngModel)]="editedPeople.age" class="form-control" />
+    </td>
+    <td>
+        <input type="button" value="Сохранить" (click)="savePeople()" class="btn btn-success" />
+    </td>
+    <td>
+        <input type="button" value="Отмена" (click)="cancel()" class="btn btn-warning" />
+    </td>
+</ng-template> 

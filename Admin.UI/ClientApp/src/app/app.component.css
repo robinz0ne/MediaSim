@@ -1,0 +1,25 @@
+.navMenu {
+    top: 0px;
+    width: 100%;
+    text-align: center;
+    position: fixed;
+    background-color: cornsilk;
+}
+
+.navMenu nav {
+    border-bottom: 1px solid #337ab7;
+    padding-bottom: 15px;
+    padding-top: 15px;
+}
+
+.navMenu a {
+    margin-right: 15px;
+    /* border-left: 1px solid  #337ab7; */
+    /* border-right: 1px solid  #337ab7; */
+    /* padding-left: 3px; */
+    /* padding-right: 3px; */
+}
+
+.content {
+     margin-top: 70px; 
+}
