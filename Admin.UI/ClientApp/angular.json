@@ -33,13 +33,13 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "helloangularapp:build"
+            "browserTarget": "clientapp:build"
           }
         }
       }
     }
   },
-  "defaultProject": "helloangularapp",
+  "defaultProject": "clientapp",
   "cli": {
     "analytics": "67486d44-71ec-40c5-8df4-90f9df359d8c"
   }
